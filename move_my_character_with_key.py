@@ -5,7 +5,7 @@ background = load_image('TUK_GROUND.png')
 character = load_image('character_move.png')
 
 def handle_events():
-    global running, dir1, dir2, onoff, wasd
+    global running, dir1, dir2, onoff, wasd, start
     # wasd = 0(상) 1(좌) 2(하) 3(우)
 
     events = get_events()
@@ -41,6 +41,7 @@ def handle_events():
 
 running = False
 onoff = True
+start = False
 x = 800 // 2
 y = 600 // 2
 frame = 0
@@ -48,11 +49,18 @@ dir1 = 0
 dir2 = 0
 wasd = 4
 
+clear_canvas()
+background.draw(400, 300, 800, 600)
+character.clip_draw(5 * 100, 300, 100, 100, x, y, 80, 80)
+update_canvas()
+
 while onoff:
-    clear_canvas()
-    background.draw(400, 300, 800, 600)
+    if start == True:
+        clear_canvas()
+        background.draw(400, 300, 800, 600)
 
     if running:
+        start = True
         if wasd == 0:
             if y + dir1 * 5 >= 0 and y + dir1 * 5 <= 600:
                 character.clip_draw(frame * 100, 0, 100, 100, x, y, 80, 80)
@@ -83,5 +91,5 @@ while onoff:
     update_canvas()
     handle_events()
     delay(0.05)
-    
+
 close_canvas()
