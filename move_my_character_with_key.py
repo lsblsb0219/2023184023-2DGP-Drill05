@@ -6,7 +6,10 @@ character = load_image('character_move.png')
 
 def handle_events():
     global running, dir1, dir2, onoff, wasd, start
+    # running 달리기 상태
+    # onoff 실행, 종료
     # wasd = 0(상) 1(좌) 2(하) 3(우)
+    # start 처음 클리어 캔버스를 무시하기 위해 -> 시작 시 캐릭터 보이게 하기 위함
 
     events = get_events()
     for event in events:
