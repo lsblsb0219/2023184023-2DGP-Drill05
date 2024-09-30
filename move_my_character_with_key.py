@@ -65,21 +65,29 @@ while onoff:
     if running:
         start = True
         if wasd == 0:
-            if y + dir1 * 5 >= 0 and y + dir1 * 5 <= 600:
+            if y + dir1 * 5 >= 10 and y + dir1 * 5 <= 600:
                 character.clip_draw(frame * 100, 0, 100, 100, x, y, 80, 80)
                 y += dir1 * 5
+            else:
+                character.clip_draw(frame * 100, 0, 100, 100, x, y, 80, 80)
         elif wasd == 1:
-            if x + dir2 * 5 >= 0 and x + dir2 * 5 <= 800:
+            if x + dir2 * 5 >= 10 and x + dir2 * 5 <= 800:
                 character.clip_draw(frame * 100, 200, 100, 100, x, y, 80, 80)
                 x += dir2 * 5
+            else:
+                character.clip_draw(frame * 100, 200, 100, 100, x, y, 80, 80)
         elif wasd == 2:
-            if y + dir1 * 5 >= 0 and y + dir1 * 5 <= 600:
+            if y + dir1 * 5 >= 10 and y + dir1 * 5 <= 600:
                 character.clip_draw(frame * 100, 300, 100, 100, x, y, 80, 80)
                 y += dir1 * 5
+            else:
+                character.clip_draw(frame * 100, 300, 100, 100, x, y, 80, 80)
         elif wasd == 3:
-            if x + dir2 * 5 >= 0 and x + dir2 * 5 <= 800:
+            if x + dir2 * 5 >= 10 and x + dir2 * 5 <= 800:
                 character.clip_draw(frame * 100, 100, 100, 100, x, y, 80, 80)
                 x += dir2 * 5
+            else:
+                character.clip_draw(frame * 100, 100, 100, 100, x, y, 80, 80)
         frame = (frame + 1) % 6
     else:
         if wasd == 0:
