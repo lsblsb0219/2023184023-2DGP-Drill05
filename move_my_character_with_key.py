@@ -67,7 +67,14 @@ while onoff:
             x += dir2 * 5
         frame = (frame + 1) % 6
     else:
-        pass
+        if wasd == 0:
+            character.clip_draw(frame * 100, 0, 100, 100, x, y, 80, 80)
+        elif wasd == 1:
+            character.clip_draw(frame * 100, 200, 100, 100, x, y, 80, 80)
+        elif wasd == 2:
+            character.clip_draw(frame * 100, 300, 100, 100, x, y, 80, 80)
+        elif wasd == 3:
+            character.clip_draw(frame * 100, 100, 100, 100, x, y, 80, 80)
 
     update_canvas()
     handle_events()
