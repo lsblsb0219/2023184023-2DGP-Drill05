@@ -14,9 +14,30 @@ def handle_events():
             onoff = False
         elif event.type == SDL_KEYDOWN:
             running = True
-
+            if event.key == SDLK_UP:
+                dir1 += 1
+                wasd = 0
+            elif event.key == SDLK_LEFT:
+                dir2 -= 1
+                wasd = 1
+            elif event.key == SDLK_DOWN:
+                dir1 -= 1
+                wasd = 2
+            elif event.key == SDLK_RIGHT:
+                dir2 += 1
+                wasd = 3
+            elif event.key == SDLK_ESCAPE:
+                onoff = False
         elif event.type == SDL_KEYUP:
             running = False
+            if event.key == SDLK_UP:
+                dir1 -= 1
+            elif event.key == SDLK_LEFT:
+                dir2 += 1
+            elif event.key == SDLK_DOWN:
+                dir1 += 1
+            elif event.key == SDLK_RIGHT:
+                dir2 -= 1
 
 running = False
 onoff = True
