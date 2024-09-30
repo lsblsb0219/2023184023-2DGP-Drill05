@@ -53,7 +53,22 @@ while onoff:
     background.draw(400, 300, 800, 600)
 
     if running:
+        if wasd == 0:
+            character.clip_draw(frame * 100, 0, 100, 100, x, y, 80, 80)
+            y += dir1 * 5
+        elif wasd == 1:
+            character.clip_draw(frame * 100, 200, 100, 100, x, y, 80, 80)
+            x += dir2 * 5
+        elif wasd == 2:
+            character.clip_draw(frame * 100, 300, 100, 100, x, y, 80, 80)
+            y += dir1 * 5
+        elif wasd == 3:
+            character.clip_draw(frame * 100, 100, 100, 100, x, y, 80, 80)
+            x += dir2 * 5
+        frame = (frame + 1) % 6
+    else:
         pass
+
     update_canvas()
     handle_events()
     delay(0.05)
