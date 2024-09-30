@@ -54,17 +54,21 @@ while onoff:
 
     if running:
         if wasd == 0:
-            character.clip_draw(frame * 100, 0, 100, 100, x, y, 80, 80)
-            y += dir1 * 5
+            if y + dir1 * 5 >= 0 and y + dir1 * 5 <= 600:
+                character.clip_draw(frame * 100, 0, 100, 100, x, y, 80, 80)
+                y += dir1 * 5
         elif wasd == 1:
-            character.clip_draw(frame * 100, 200, 100, 100, x, y, 80, 80)
-            x += dir2 * 5
+            if x + dir2 * 5 >= 0 and x + dir2 * 5 <= 800:
+                character.clip_draw(frame * 100, 200, 100, 100, x, y, 80, 80)
+                x += dir2 * 5
         elif wasd == 2:
-            character.clip_draw(frame * 100, 300, 100, 100, x, y, 80, 80)
-            y += dir1 * 5
+            if y + dir1 * 5 >= 0 and y + dir1 * 5 <= 600:
+                character.clip_draw(frame * 100, 300, 100, 100, x, y, 80, 80)
+                y += dir1 * 5
         elif wasd == 3:
-            character.clip_draw(frame * 100, 100, 100, 100, x, y, 80, 80)
-            x += dir2 * 5
+            if x + dir2 * 5 >= 0 and x + dir2 * 5 <= 800:
+                character.clip_draw(frame * 100, 100, 100, 100, x, y, 80, 80)
+                x += dir2 * 5
         frame = (frame + 1) % 6
     else:
         if wasd == 0:
@@ -79,4 +83,5 @@ while onoff:
     update_canvas()
     handle_events()
     delay(0.05)
+    
 close_canvas()
